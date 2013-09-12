@@ -6,23 +6,23 @@ and projects.
 #### var.rb
 A simple module to display variable information 
 
-`require_relative 'lib/var'`
-`test = "test string"`
-`Var.Info("test", test)`
+```require_relative 'lib/var'
+test = "test string"
+Var.Info("test", test)```
 
 =>
 
-`variable  : test`
-`class     : String`
-`inspect   : "test string"`
+```variable  : test
+class     : String
+inspect   : "test string"```
 
 #### colour.rb
 A simple class to colorise standard output text 
 
-`require_relative 'lib/colour`
-`puts "My text is bold".bold`
+```require_relative 'lib/colour
+puts "My text is bold".bold```
 =>
-`**My text is bold**`
+**`My text is bold`**
 
 
 
