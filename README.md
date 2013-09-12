@@ -28,9 +28,9 @@ require_relative 'lib/colour
 puts "My text is bold".bold
 ```
 =>
-```
-__My text is bold__
-```
+**```
+My text is bold
+```**
 
 
 
