@@ -14,15 +14,19 @@ Var.Info("test", test)
 
 =>
 
-```variable  : test
+```
+variable  : test
 class     : String
-inspect   : "test string"```
+inspect   : "test string"
+```
 
 #### colour.rb
 A simple class to colourise standard output text 
 
-```require_relative 'lib/colour
-puts "My text is bold".bold```
+```
+require_relative 'lib/colour
+puts "My text is bold".bold
+```
 =>
 **`My text is bold`**
 
