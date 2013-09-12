@@ -1,6 +1,6 @@
 module Var
-  #
-  #
+  # A simple module to display variable information 
+  # require_relative 'lib/var => Var.Info("test", test)
   #----------------------------------------------------------------------------#
   def Var.Info(name, variable)
     column = 10
