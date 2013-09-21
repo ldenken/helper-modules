@@ -17,6 +17,8 @@
      otherwise creates a new file for reading and
      writing.
 =end
+require 'time'
+
 module FileIO
 
   #----------------------------------------------------------------------------#
@@ -76,6 +78,22 @@ module FileIO
   	return newString
   end
 
+  #--------------------------------------------------------------------------#
+  def FileIO.log(filename, message)
+    # 
+    begin
+      ts = Time.now.utc.iso8601
+      file = File.open(filename, "a+")
+      file.write("#{ts} #{message}\n")
+    rescue IOError => error
+      error = "#{error}"
+      location = "def FileIO.log(#{filename}, #{message})"
+      FileIO.errorAndExit(error, location)
+    ensure
+      file.close unless file == nil
+    end
+  end
+
   #----------------------------------------------------------------------------#
   def FileIO.fileToArray(filename, delimiter)
     # READ a file into an array of lines or an array of array lines split by the
@@ -95,7 +113,7 @@ module FileIO
               import = 1
             end
           end
-          if line != "" && line !~ /\A#/ && line !~ /\A=[bdegin]{3,5}\z/
+          if line !~ /\A#/ && line !~ /\A=[bdegin]{3,5}\z/
             if import == 1                      # line NOT in a comment block
               line = FileIO.reduceUTF8String(line)
               if delimiter != ""

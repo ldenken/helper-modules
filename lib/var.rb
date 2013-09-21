@@ -1,8 +1,8 @@
+#------------------------------------------------------------------------------#
+# A simple module to display variable information 
+# require_relative 'lib/var => Var.info("test", test)
 module Var
-  # A simple module to display variable information 
-  # require_relative 'lib/var => Var.Info("test", test)
-  #----------------------------------------------------------------------------#
-  def Var.Info(name, variable)
+  def Var.info(name, variable)
     column = 10
     puts "variable".ljust(column) + ": #{name}"
     puts "class".ljust(column) + ": #{variable.class}"

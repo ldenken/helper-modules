@@ -1,5 +1,5 @@
-#----------------------------------------------------------------------------#
-# A simple class to colourised display variable information 
+#------------------------------------------------------------------------------#
+# A simple class to colourise display output 
 # require_relative 'lib/colour => puts "My text is bold".bold
 class String
   def black;          "\033[30m#{self}\033[0m" end
